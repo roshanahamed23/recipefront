@@ -21,7 +21,7 @@ const Register = ()=>{
   const handlesubmit=async(e)=>{
     e.preventDefault();
     try{
-      const response=await axios.post("http://localhost:4000/auth/register",{username,password});
+      const response=await axios.post("https://recipeback.onrender.com/auth/register",{username,password});
       alert(response.data.message)
     }catch(error){
       console.log(error);
@@ -49,7 +49,7 @@ const Login = ()=>{
   const handlesubmit= async(e)=>{
     e.preventDefault();
     try{
-      const response=await axios.post("http://localhost:4000/auth/login",{username,password});
+      const response=await axios.post("https://recipeback.onrender.com/auth/login",{username,password});
       setCookies("access_token",response.data.token);
       window.localStorage.setItem("userID",response.data.userId);
       navigate('/');

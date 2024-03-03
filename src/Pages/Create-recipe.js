@@ -17,7 +17,7 @@ const Createrecipe = () => {
   const handlesubmit= async(e)=>{
     e.preventDefault();
     try{
-      await axios.post("http://localhost:4000/recipe/",recipes);
+      await axios.post("https://recipeback.onrender.com/recipe/",recipes);
       alert("recipe created")
       console.log(userid)
     }catch(error){

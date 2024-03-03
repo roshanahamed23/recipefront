@@ -11,7 +11,7 @@ const Home = () => {
 
     const fetchRecipe = async () => {
       try{
-     const response = await axios.get("http://localhost:4000/recipe");
+     const response = await axios.get("https://recipeback.onrender.com/recipe");
      setaRecipe(response.data);
       }catch(error){
         console.log(error);
@@ -20,7 +20,7 @@ const Home = () => {
 
     const Savedrecipe = async()=>{
       try{
-      const response = await axios.get(`http://localhost:4000/recipe/saved-recipes/ids/${userID}`);
+      const response = await axios.get(`https://recipeback.onrender.com/recipe/saved-recipes/ids/${userID}`);
       setsavedRecipe(response.data.savedrecipes);
       console.log(savedrecipe);
       console.log(response.data.savedrecipes);
@@ -35,7 +35,7 @@ const Home = () => {
 
   const saveButton = async(recipeID)=>{
     try {
-      await axios.put("http://localhost:4000/recipe", {
+      await axios.put("https://recipeback.onrender.com/recipe", {
         recipeID,
         userID,
       });
